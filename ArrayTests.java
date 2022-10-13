@@ -4,15 +4,49 @@ import org.junit.*;
 public class ArrayTests {
 	@Test 
 	public void testReverseInPlace() {
-    int[] input1 = { 3 };
-    ArrayExamples.reverseInPlace(input1);
-    assertArrayEquals(new int[]{ 3 }, input1);
+    int[] input = { 3 };
+    ArrayExamples.reverseInPlace(input);
+    assertArrayEquals(new int[]{ 3 }, input);
 	}
 
+  @Test
+  public void testReverseInPlace2() {
+    int[] input = { };
+    ArrayExamples.reverseInPlace(input);
+    assertArrayEquals(new int[]{ }, input);
+  }
+  
+  @Test
+  public void testReverseInPlace3() {
+    int[] input = {1,2,3};
+    ArrayExamples.reverseInPlace(input);
+    assertArrayEquals(new int[]{3,2,1}, input);
+    //System.out.println(input); how to see actual result?
+  }
+
+  @Test
+  public void testReverseInPlace4() {
+    int[] input = {1,2,3,4,5};
+    ArrayExamples.reverseInPlace(input);
+    assertArrayEquals(new int[]{5,4,3,2,1}, input);
+  }
 
   @Test
   public void testReversed() {
-    int[] input1 = { };
-    assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
+    int[] input = { };
+    assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input));
   }
+
+  @Test
+  public void testReversed2() {
+    int[] input = {1,2,3};
+    assertArrayEquals(new int[]{3,2,1}, ArrayExamples.reversed(input));
+  }
+
+  @Test
+  public void testReversed3() {
+    int[] input = {1,2,3,4,5};
+    assertArrayEquals(new int[]{5,4,3,2,1}, ArrayExamples.reversed(input));
+  }
+
 }

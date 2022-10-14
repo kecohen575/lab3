@@ -31,10 +31,13 @@ public class ArrayExamples {
       if(num < lowest) { lowest = num; }
     }
     double sum = 0;
+    int flag = 0;
     for(double num: arr) {
       if(num != lowest) { sum += num; }
+      if(num == lowest) { flag += 1; }
     }
-    return sum / (arr.length - 1);
+    if(flag >= arr.length - 1) { return 0; }
+    return sum / (arr.length - flag);
   }
 
 
